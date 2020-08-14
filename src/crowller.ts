@@ -8,7 +8,7 @@ import DellAnalyzer from './dellAnalyzer'
 export interface Analyzer {
     analyze: (html: string, filePath: string) => string
 }
-
+console.log(11111221112221)
 class Crowller {
     private filePath = path.resolve(__dirname, '../data/course.json')
     constructor(private url: string, private analyzer: Analyzer) {
@@ -19,16 +19,16 @@ class Crowller {
         const fileContent = this.analyzer.analyze(html, this.filePath)
         this.writeFile(fileContent)
     }
-    async getRawHTML() {
+    private async getRawHTML() {
         const result = await superAgent.get(this.url)
         return result.text
     }
-    writeFile(content: string) {
+    private writeFile(content: string) {
         fs.writeFileSync(this.filePath, content)
     }
 }
 
 const secretKey = 'PP87ANTIPIRATE'
 const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secretKey}`
-const analyzer = new DellAnalyzer()
+const analyzer = DellAnalyzer.getInstance()
 const crowller = new Crowller(url, analyzer)

@@ -5,13 +5,18 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "ts-node ./src/crowller.ts"
+        "dev_build": "tsc -w",
+        "dev_start": "nodemon --exec node ./build/crowller.js",
+        "dev": "npm-run-all --parallel dev_**",
+        "demo": "ts-node src/demo/class-generic.ts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "cheerio": "^1.0.0-rc.3",
+        "nodemon": "^2.0.4",
+        "npm-run-all": "^4.1.5",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.7"
     },
@@ -19,5 +24,10 @@
         "@types/cheerio": "^0.22.21",
         "@types/superagent": "^4.1.9",
         "superagent": "^6.0.0"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "data/*"
+        ]
     }
 }
