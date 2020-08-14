@@ -1,15 +1,29 @@
 /**
  * declare 声明
  */
-declare var $: (params: () => void) => void
-declare function $(params: () => void): void
-declare function $(params: string): {
-    html: (html: string) => {}
-}
-declare function $(params: string): {
-    append: (html: string) => {}
+
+interface JqueryInstance {
+    html: (html: string) => JqueryInstance
 }
 
-declare namespace myLib {
-    function makeGreeting(s: string): string
+// declare function $(params: string): {
+//     html: (html: string) => {}
+//     append: (html: string) => {}
+// }
+declare function $(readyFunc: () => void): void
+declare function $(selector: string): JqueryInstance
+// 声明对象 命名空间的嵌套
+
+declare namespace $ {
+    namespace fn {
+        //对类进行类型定义
+        class init { }
+    }
 }
+//函数重载
+// interface Jquery {
+//     (readyFunc: () => void): void
+//     (selector: string): JqueryInstance
+//     (html: string): JqueryInstance
+// }
+// declare var $: Jquery

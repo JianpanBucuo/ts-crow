@@ -22,7 +22,10 @@
     },
     "dependencies": {
         "@types/cheerio": "^0.22.21",
+        "@types/lodash": "^4.14.159",
         "@types/superagent": "^4.1.9",
+        "jqeury": "0.0.1-security",
+        "lodash": "^4.17.20",
         "superagent": "^6.0.0"
     },
     "nodemonConfig": {
