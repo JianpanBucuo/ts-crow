@@ -8,8 +8,7 @@ import DellAnalyzer from './dellAnalyzer'
 export interface Analyzer {
     analyze: (html: string, filePath: string) => string
 }
-console.log(11111221112221)
-class Crowller {
+export class Crowller {
     private filePath = path.resolve(__dirname, '../data/course.json')
     constructor(private url: string, private analyzer: Analyzer) {
         this.initSpiderProcess()
@@ -24,10 +23,10 @@ class Crowller {
         return result.text
     }
     private writeFile(content: string) {
+        console.log(content)
         fs.writeFileSync(this.filePath, content)
     }
 }
-
 const secretKey = 'PP87ANTIPIRATE'
 const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secretKey}`
 const analyzer = DellAnalyzer.getInstance()

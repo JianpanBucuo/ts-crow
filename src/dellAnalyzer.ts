@@ -11,7 +11,7 @@ interface CourseResult {
 interface Content {
     [propName: number]: Course[]
 }
-class DellAnalyzer implements Analyzer {
+export class DellAnalyzer implements Analyzer {
     private static instance: DellAnalyzer
     static getInstance() {
         if (!DellAnalyzer.instance) {

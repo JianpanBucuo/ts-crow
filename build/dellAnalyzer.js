@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DellAnalyzer = void 0;
 var cheerio_1 = __importDefault(require("cheerio"));
 var fs_1 = __importDefault(require("fs"));
 var DellAnalyzer = /** @class */ (function () {
@@ -45,4 +46,5 @@ var DellAnalyzer = /** @class */ (function () {
     };
     return DellAnalyzer;
 }());
+exports.DellAnalyzer = DellAnalyzer;
 exports.default = DellAnalyzer;

@@ -39,13 +39,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Crowller = void 0;
 // ts -> .d.ts 翻译文件-> js
 // @types/superagent
 var superagent_1 = __importDefault(require("superagent"));
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
 var dellAnalyzer_1 = __importDefault(require("./dellAnalyzer"));
-console.log(11111221112221);
 var Crowller = /** @class */ (function () {
     function Crowller(url, analyzer) {
         this.url = url;
@@ -82,10 +82,12 @@ var Crowller = /** @class */ (function () {
         });
     };
     Crowller.prototype.writeFile = function (content) {
+        console.log(content);
         fs_1.default.writeFileSync(this.filePath, content);
     };
     return Crowller;
 }());
+exports.Crowller = Crowller;
 var secretKey = 'PP87ANTIPIRATE';
 var url = "http://www.dell-lee.com/typescript/demo.html?secret=" + secretKey;
 var analyzer = dellAnalyzer_1.default.getInstance();
