@@ -31,3 +31,23 @@ const secretKey = 'PP87ANTIPIRATE'
 const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secretKey}`
 const analyzer = DellAnalyzer.getInstance()
 const crowller = new Crowller(url, analyzer)
+
+
+interface BaseApplication {
+    appId: number
+}
+
+export interface Application extends BaseApplication {
+    init(): void
+    get(key: string): object
+}
+class A implements Application {
+    public appId: number = 1
+    constructor() {
+        // this.appId = 1
+    }
+    init() { }
+    get(a: string) {
+        return {}
+    }
+}

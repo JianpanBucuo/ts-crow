@@ -92,3 +92,14 @@ var secretKey = 'PP87ANTIPIRATE';
 var url = "http://www.dell-lee.com/typescript/demo.html?secret=" + secretKey;
 var analyzer = dellAnalyzer_1.default.getInstance();
 var crowller = new Crowller(url, analyzer);
+var A = /** @class */ (function () {
+    function A() {
+        this.appId = 1;
+        // this.appId = 1
+    }
+    A.prototype.init = function () { };
+    A.prototype.get = function (a) {
+        return {};
+    };
+    return A;
+}());

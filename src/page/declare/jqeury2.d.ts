@@ -1,3 +1,5 @@
+import { application } from "express";
+
 /**
  * @title 类型描述文件
  * @description 全局变量和全局函数的定义

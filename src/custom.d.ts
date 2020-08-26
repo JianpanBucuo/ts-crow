@@ -8,3 +8,9 @@ declare namespace Express {
     }
 }
 
+declare enum DeclareEnum {
+    man,
+    woman
+}
+
+declare var _: (selector) => any
